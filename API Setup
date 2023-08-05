@@ -1,0 +1,8 @@
+import requests
+import fredpy as fp
+fp.api_key = '57b1548d2ec2ce5542e4ac65aa86c340'
+endpoint = 'https://api.stlouisfed.org/fred/sources'
+params = {'api_key': fp.api_key,'file_type': 'json'}
+response = requests.get(endpoint,params=params)
+gdp = fp.series('gdpc1')
+print(gdp)
